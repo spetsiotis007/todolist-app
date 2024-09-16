@@ -1,0 +1,160 @@
+/* Root variables for themes */
+:root {
+  --primary-color-light: #6200ea;
+  --primary-color-dark: #bb86fc;
+  --bg-color-light: #f5f5f5;
+  --bg-color-dark: #121212;
+  --text-color-light: #000000;
+  --text-color-dark: #ffffff;
+  --secondary-color-light: #03dac6;
+  --secondary-color-dark: #03dac6;
+  --input-bg-color-light: #ffffff;
+  --input-bg-color-dark: #333333;
+  --task-bg-color-light: #ffffff;
+  --task-bg-color-dark: #333333;
+  --task-border-color-light: #ddd;
+  --task-border-color-dark: #444;
+  --button-hover-color-light: #3700b3;
+  --button-hover-color-dark: #3700b3;
+}
+
+/* Light Theme */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+/* Container styles */
+.container {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: var(--task-bg-color-light);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+body.dark .container {
+  background-color: var(--task-bg-color-dark);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  color: var(--primary-color-light);
+}
+
+body.dark h1 {
+  color: var(--primary-color-dark);
+}
+
+/* Input and Select styles */
+input[type="text"], input[type="date"], select {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--task-border-color-light);
+  border-radius: 5px;
+  background-color: var(--input-bg-color-light);
+  color: var(--text-color-light);
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+body.dark input[type="text"], 
+body.dark input[type="date"], 
+body.dark select {
+  background-color: var(--input-bg-color-dark);
+  border-color: var(--task-border-color-dark);
+  color: var(--text-color-dark);
+}
+
+/* Button styles */
+button {
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary-color-light);
+  color: var(--text-color-dark);
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+body.dark button {
+  background-color: var(--primary-color-dark);
+}
+
+button:hover {
+  background-color: var(--button-hover-color-light);
+}
+
+body.dark button:hover {
+  background-color: var(--button-hover-color-dark);
+}
+
+/* Task list styles */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: var(--task-bg-color-light);
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--task-border-color-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s, border-color 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.dark li {
+  background-color: var(--task-bg-color-dark);
+  border-color: var(--task-border-color-dark);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Task Text */
+li span {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+/* Filter buttons */
+#filters {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#filters button {
+  margin: 5px;
+}
+
+/* Small text (e.g., due date) */
+small {
+  display: block;
+  margin-top: 5px;
+  color: var(--secondary-color-light);
+}
+
+body.dark small {
+  color: var(--secondary-color-dark);
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.3s ease;
+}
